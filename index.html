@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart Airport Check-In System</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  
+
+  <div class="container">
+    <div class="header">
+      <h1>Smart Airport Check-In System</h1>
+      <div class="counter-box" id="passengerCounter">0 of 0</div>
+    </div>
+
+    <div class="main-grid">
+      <div class="card">
+        <h2>Passenger Information</h2>
+
+        <div class="form-group">
+          <label>Passenger Name</label>
+          <input type="text" id="passengerName" placeholder="Enter passenger name" />
+        </div>
+
+        <div class="form-group">
+          <label>Passport Number</label>
+          <input type="text" id="passportNumber" placeholder="Enter passport number" />
+        </div>
+
+        <div class="form-group">
+          <label>Destination</label>
+          <select id="destination">
+            <option value="">Select destination</option>
+            <option value="Dubai">Dubai</option>
+            <option value="Cairo">Cairo</option>
+            <option value="Istanbul">Istanbul</option>
+            <option value="Doha">Doha</option>
+            <option value="Jeddah">Jeddah</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Airline</label>
+          <select id="airline">
+            <option value="">Select airline</option>
+            <option value="Qatar Airways">Qatar Airways</option>
+            <option value="Emirates">Emirates</option>
+            <option value="Turkish Airlines">Turkish Airlines</option>
+            <option value="EgyptAir">EgyptAir</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Baggage Weight (kg)</label>
+          <input type="number" id="baggageWeight" placeholder="Enter baggage weight" />
+        </div>
+
+        <div class="form-group">
+          <label>Travel Class</label>
+          <select id="travelClass">
+            <option value="">Select class</option>
+            <option value="Economy">Economy</option>
+            <option value="Business">Business</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Flight Date</label>
+          <input type="date" id="flightDate" />
+        </div>
+
+        <div class="form-group">
+          <label>Flight Time</label>
+          <input type="time" id="flightTime" />
+        </div>
+
+        <button type="button" onclick="generateBoardingPass()">Generate Boarding Pass</button>
+        <button type="button" class="secondary-btn" onclick="resetForm()">Reset</button>
+        <button type="button" class="print-btn" onclick="printBoardingPass()">Print Boarding Pass</button>
+
+        <div class="nav-buttons">
+          <button type="button" onclick="showPreviousPassenger()">Previous Passenger</button>
+          <button type="button" onclick="showNextPassenger()">Next Passenger</button>
+        </div>
+
+        <button type="button" class="danger-btn" onclick="clearAllPassengers()">Clear Saved Passengers</button>
+      </div>
+
+      <div class="boarding-pass">
+        <h2>Boarding Pass</h2>
+
+        <div class="ticket-row">
+          <span class="label">Name:</span>
+          <span class="value" id="resultName">---</span>
+        </div>
+
+        <div class="ticket-row">
+          <span class="label">Passport:</span>
+          <span class="value" id="resultPassport">---</span>
+        </div>
+
+        <div class="ticket-row">
+          <span class="label">Destination:</span>
+          <span class="value" id="resultDestination">---</span>
+        </div>
+
+        <div class="ticket-row">
+          <span class="label">Airline:</span>
+          <span class="value" id="resultAirline">---</span>
+        </div>
+
+        <div class="ticket-row">
+          <span class="label">Flight No:</span>
+          <span class="value" id="resultFlight">---</span>
+        </div>
+
+        <div class="ticket-row">
+          <span class="label">Gate:</span>
+          <span class="value" id="resultGate">---</span>
+        </div>
+
+        <div class="ticket-row">
+          <span class="label">Seat:</span>
+          <span class="value" id="resultSeat">---</span>
+        </div>
+
+        <div class="ticket-row">
+          <span class="label">Class:</span>
+          <span class="value" id="resultClass">---</span>
+        </div>
+
+        <div class="ticket-row">
+          <span class="label">Flight Date:</span>
+          <span class="value" id="resultDate">---</span>
+        </div>
+
+        <div class="ticket-row">
+          <span class="label">Flight Time:</span>
+          <span class="value" id="resultTime">---</span>
+        </div>
+
+        <div class="ticket-row">
+          <span class="label">Check-In Time:</span>
+          <span class="value" id="resultCheckIn">---</span>
+        </div>
+
+        <div id="baggageBox" class="status normal">Baggage Status: ---</div>
+        <div id="statusBox" class="status checked">Status: ---</div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
